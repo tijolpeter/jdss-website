@@ -1,0 +1,9 @@
+export { Hero } from './hero';
+export { ClientLogos } from './client-logos';
+export { ValueProps } from './value-props';
+export { WhoWeServe } from './who-we-serve';
+export { ServicesGrid } from './services-grid';
+export { Stats } from './stats';
+export { Testimonials } from './testimonials';
+export { CTASection } from './cta-section';
+export { QuickLinks } from './quick-links';
