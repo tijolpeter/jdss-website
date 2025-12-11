@@ -100,8 +100,8 @@ export default function ServicesPage() {
       {/* CTA */}
       <CTASection
         title="Not sure which service you need?"
-        description="Schedule a free consultation and we'll help you identify the right solutions for your business."
-        primaryCTA={{ text: 'Get Free Consultation', href: '/contact' }}
+        description="Schedule a consultation and we'll help you identify the right solutions for your business."
+        primaryCTA={{ text: 'Get in Touch', href: '/contact' }}
       />
     </>
   );

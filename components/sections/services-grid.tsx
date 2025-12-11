@@ -32,7 +32,7 @@ const services = [
   {
     slug: 'cfo-advisory',
     title: 'CFO & Advisory',
-    description: 'Strategic financial leadership on demand. Get CFO-level guidance without the CFO price tag.',
+    description: 'Strategic financial leadership on demand. Expert guidance for growing businesses.',
     icon: 'TrendingUp',
     featured: true,
   },

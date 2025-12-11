@@ -56,7 +56,7 @@ export default function CareersPage() {
               Join Our Team
             </h1>
             <p className="text-xl text-secondary-600 mb-8">
-              Build your career with a firm that values growth, excellence, and work-life balance.
+              Build your career with a firm that values growth, learning, and work-life balance.
             </p>
             <Button size="lg" asChild>
               <a href="#openings">View Open Positions</a>
@@ -86,7 +86,7 @@ export default function CareersPage() {
             <div className="bg-primary-900 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Our Culture</h3>
               <p className="text-primary-200 mb-6">
-                We foster a culture of continuous learning, collaboration, and professional excellence. Our team works together to deliver exceptional client service while maintaining healthy work-life boundaries.
+                We foster a culture of continuous learning, collaboration, and professional growth. Our team works together to deliver quality client service while maintaining healthy work-life boundaries.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">

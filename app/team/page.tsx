@@ -113,7 +113,7 @@ export default function TeamPage() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-secondary-900 mb-4">Join Our Team</h2>
             <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
-              We're always looking for talented professionals who share our passion for excellence. Explore career opportunities at JDSS & Co.
+              We're always looking for talented professionals who share our commitment to quality. Explore career opportunities at JDSS & Co.
             </p>
             <Button asChild>
               <Link href="/careers">

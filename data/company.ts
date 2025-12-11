@@ -27,7 +27,7 @@ export const companyInfo: CompanyInfo = {
 export const stats: Stat[] = [
   {
     value: '15+',
-    label: 'Years of Excellence',
+    label: 'Years in Practice',
     description: 'Serving businesses since 2009',
   },
   {
@@ -36,14 +36,14 @@ export const stats: Stat[] = [
     description: 'Across diverse industries',
   },
   {
-    value: '50Cr+',
-    label: 'Tax Saved',
-    description: 'For our clients',
+    value: '8',
+    label: 'Service Verticals',
+    description: 'Comprehensive professional services',
   },
   {
-    value: '100%',
-    label: 'Compliance Rate',
-    description: 'Zero penalties track record',
+    value: '4',
+    label: 'Industry Segments',
+    description: 'Startups, SMEs, Corporates & HNIs',
   },
 ];
 
@@ -112,7 +112,7 @@ export const industries = [
   {
     slug: 'startups',
     title: 'Startups',
-    description: 'Build your financial foundation right from day one. CFO-level guidance without the CFO price tag.',
+    description: 'Build your financial foundation right from day one. Strategic guidance tailored to early-stage businesses.',
     icon: 'Rocket',
     highlights: ['Fundraising support', 'MIS setup', 'Compliance automation'],
   },

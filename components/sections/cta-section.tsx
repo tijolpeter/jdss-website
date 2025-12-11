@@ -22,9 +22,9 @@ interface CTASectionProps {
 
 export function CTASection({
   title = 'Ready to transform your financial operations?',
-  description = "Let's discuss how we can help you achieve your goals. Schedule a free consultation with our experts.",
+  description = "Let's discuss how we can help you achieve your goals. Schedule a consultation with our team.",
   primaryCTA = {
-    text: 'Schedule a Free Consultation',
+    text: 'Schedule a Consultation',
     href: '/contact',
   },
   secondaryCTA = {

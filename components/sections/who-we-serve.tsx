@@ -10,7 +10,7 @@ const industries = [
   {
     slug: 'startups',
     title: 'Startups',
-    description: 'Build your financial foundation right from day one. CFO-level guidance without the CFO price tag.',
+    description: 'Build your financial foundation right from day one. Strategic guidance tailored to early-stage businesses.',
     highlights: ['Fundraising support', 'MIS setup', 'Compliance automation'],
     icon: Rocket,
     color: 'from-blue-500 to-cyan-500',

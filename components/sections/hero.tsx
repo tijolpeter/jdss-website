@@ -38,7 +38,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               Strategic Finance Partners{' '}
-              <span className="text-gradient">for Growing Businesses</span>
+              <span className="text-primary-700">for Growing Businesses</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -83,11 +83,11 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent-green" />
-                <span>15+ Years Experience</span>
+                <span>15+ Years in Practice</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent-green" />
-                <span>4.9★ Client Rating</span>
+                <span>Multi-disciplinary Team</span>
               </div>
             </motion.div>
           </div>

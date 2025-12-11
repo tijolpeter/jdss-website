@@ -8,7 +8,7 @@ import { CTASection } from '@/components/sections/cta-section';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about JDSS & Co, a new-age chartered accountancy firm built for the ambitions of modern Indian businesses. 15+ years of excellence serving startups, SMEs, and corporates.',
+  description: 'Learn about JDSS & Co, a chartered accountancy firm built for the ambitions of modern Indian businesses. 15+ years in practice serving startups, SMEs, and corporates.',
 };
 
 const philosophy = [
@@ -153,7 +153,7 @@ export default function AboutPage() {
             <div className="bg-primary-900 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">ICAI Member Firm</h3>
               <p className="text-primary-200 mb-6">
-                We are a registered member firm of the Institute of Chartered Accountants of India (ICAI), adhering to the highest standards of professional ethics and technical excellence.
+                We are a registered member firm of the Institute of Chartered Accountants of India (ICAI), adhering to professional ethics and technical standards.
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center">
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <div className="font-semibold">15+ Years</div>
-                  <div className="text-sm text-primary-300">of Excellence</div>
+                  <div className="text-sm text-primary-300">in Practice</div>
                 </div>
               </div>
             </div>

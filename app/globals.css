@@ -176,13 +176,6 @@ body {
   text-wrap: balance;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-500) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* ========================================
    Focus Styles (Accessibility)
    ======================================== */
