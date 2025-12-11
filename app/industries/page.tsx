@@ -97,18 +97,21 @@ export default function IndustriesPage() {
                     ))}
                   </ul>
                   <Link
-                    href="/contact"
+                    href={`/industries/${industry.slug}`}
                     className="inline-flex items-center text-primary-700 font-medium hover:text-primary-800 transition-colors"
                   >
-                    Get Started
+                    Learn More
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
-                <div className={`${industry.bgColor} rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <Link
+                  href={`/industries/${industry.slug}`}
+                  className={`${industry.bgColor} rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''} hover:shadow-lg transition-shadow`}
+                >
                   <div className="aspect-square rounded-xl bg-white/50 flex items-center justify-center">
                     <industry.icon className={`w-24 h-24 ${industry.iconColor} opacity-50`} />
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

@@ -38,17 +38,6 @@ export function Header() {
           : 'bg-white'
       )}
     >
-      {/* Top bar */}
-      <div className="hidden lg:block bg-primary-50 border-b border-primary-100">
-        <Container size="xl">
-          <div className="flex items-center justify-end gap-6 py-2 text-xs text-primary-700">
-            <Link href="/resources" className="hover:text-primary-900 transition-colors">
-              Resources
-            </Link>
-          </div>
-        </Container>
-      </div>
-
       <Container size="xl">
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
