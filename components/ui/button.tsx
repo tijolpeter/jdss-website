@@ -4,7 +4,7 @@ import { forwardRef, ButtonHTMLAttributes, ReactElement, cloneElement, isValidEl
 import { cn } from '@/lib/cn';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'cta';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'dark';
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
   asChild?: boolean;
@@ -25,46 +25,50 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles = cn(
-      'inline-flex items-center justify-center font-medium transition-all duration-200',
+      'inline-flex items-center justify-center font-semibold transition-all duration-200',
       'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
       'disabled:opacity-50 disabled:cursor-not-allowed',
-      'rounded-lg'
+      'rounded-full uppercase tracking-wide'
     );
 
     const variants = {
+      // Orange primary button (airCFO style)
       primary: cn(
-        'bg-primary-700 text-white',
-        'hover:bg-primary-800',
-        'focus-visible:ring-primary-500',
+        'bg-accent-orange text-primary-900',
+        'hover:bg-accent-orange-dark',
+        'focus-visible:ring-accent-orange',
         'shadow-sm hover:shadow-md'
       ),
+      // Dark teal secondary button
       secondary: cn(
-        'bg-secondary-100 text-secondary-900',
-        'hover:bg-secondary-200',
-        'focus-visible:ring-secondary-500'
+        'bg-primary-900 text-white',
+        'hover:bg-primary-800',
+        'focus-visible:ring-primary-700'
       ),
+      // Outline button
       outline: cn(
-        'border-2 border-primary-700 text-primary-700 bg-transparent',
+        'border-2 border-primary-800 text-primary-800 bg-transparent',
         'hover:bg-primary-50',
         'focus-visible:ring-primary-500'
       ),
+      // Ghost button
       ghost: cn(
         'text-secondary-700 bg-transparent',
         'hover:bg-secondary-100 hover:text-secondary-900',
         'focus-visible:ring-secondary-500'
       ),
-      cta: cn(
-        'bg-gradient-to-r from-accent-orange to-accent-teal text-white',
-        'hover:opacity-90',
-        'focus-visible:ring-accent-orange',
-        'shadow-lg hover:shadow-xl'
+      // Dark button for light backgrounds
+      dark: cn(
+        'bg-secondary-900 text-white',
+        'hover:bg-secondary-800',
+        'focus-visible:ring-secondary-700'
       ),
     };
 
     const sizes = {
-      sm: 'px-3 py-1.5 text-sm gap-1.5',
-      md: 'px-4 py-2 text-base gap-2',
-      lg: 'px-6 py-3 text-lg gap-2.5',
+      sm: 'px-4 py-2 text-xs gap-1.5',
+      md: 'px-5 py-2.5 text-sm gap-2',
+      lg: 'px-7 py-3.5 text-sm gap-2.5',
     };
 
     const combinedClassName = cn(baseStyles, variants[variant], sizes[size], className);

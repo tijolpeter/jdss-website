@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Users, Award, Target, Lightbulb } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
@@ -49,13 +50,24 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <Container size="xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-              About JDSS & Co
-            </h1>
-            <p className="text-xl text-secondary-600 mb-8">
-              A new-age chartered accountancy firm built for the ambitions of modern Indian businesses.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                About JDSS & Co
+              </h1>
+              <p className="text-xl text-secondary-600">
+                A new-age chartered accountancy firm built for the ambitions of modern Indian businesses.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/images/illustrations/team-about.png"
+                alt="JDSS team collaboration"
+                width={500}
+                height={400}
+                className="w-full h-auto max-w-[400px]"
+              />
+            </div>
           </div>
         </Container>
       </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
@@ -34,13 +35,24 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <Container size="xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-              Let's Talk
-            </h1>
-            <p className="text-xl text-secondary-600">
-              Ready to transform your financial operations? We're here to help.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+                Let's Talk
+              </h1>
+              <p className="text-xl text-secondary-600">
+                Ready to transform your financial operations? We're here to help.
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/images/illustrations/contact-cta.png"
+                alt="Contact us illustration"
+                width={450}
+                height={380}
+                className="w-full h-auto max-w-[350px]"
+              />
+            </div>
           </div>
         </Container>
       </section>

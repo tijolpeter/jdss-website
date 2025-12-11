@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   TrendingUp,
   Calculator,
@@ -28,6 +29,17 @@ const iconMap: Record<string, typeof TrendingUp> = {
   ClipboardCheck,
   Scale,
   Settings,
+};
+
+const illustrationMap: Record<string, string> = {
+  'cfo-advisory': '/images/illustrations/services-advisory.png',
+  'taxation': '/images/illustrations/tax-planning.png',
+  'assurance': '/images/illustrations/compliance-audit.png',
+  'startup-services': '/images/illustrations/startup-growth.png',
+  'company-law': '/images/illustrations/compliance-audit.png',
+  'business-setup': '/images/illustrations/startup-growth.png',
+  'legal-services': '/images/illustrations/compliance-audit.png',
+  'financial-systems': '/images/illustrations/tech-powered.png',
 };
 
 interface ServicePageProps {
@@ -74,33 +86,46 @@ export default async function ServicePage({ params }: ServicePageProps) {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <Container size="xl">
-          <div className="max-w-4xl">
-            <Link
-              href="/services"
-              className="inline-flex items-center text-sm text-secondary-600 hover:text-primary-700 mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              All Services
-            </Link>
-            <div className="flex items-start gap-6 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-8 h-8 text-primary-700" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Link
+                href="/services"
+                className="inline-flex items-center text-sm text-secondary-600 hover:text-primary-700 mb-6 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                All Services
+              </Link>
+              <div className="flex items-start gap-6 mb-6">
+                <div className="w-16 h-16 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-8 h-8 text-primary-700" />
+                </div>
+                <div>
+                  <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary-900 mb-4">
+                    {service.title}
+                  </h1>
+                  <p className="text-xl text-secondary-600">{service.shortDescription}</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">
-                  {service.title}
-                </h1>
-                <p className="text-xl text-secondary-600">{service.shortDescription}</p>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" asChild>
+                  <Link href="/contact">{service.cta}</Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="tel:+914842704040">Call Us Now</Link>
+                </Button>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" asChild>
-                <Link href="/contact">{service.cta}</Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="tel:+914842704040">Call Us Now</Link>
-              </Button>
-            </div>
+            {illustrationMap[slug] && (
+              <div className="flex justify-center lg:justify-end">
+                <Image
+                  src={illustrationMap[slug]}
+                  alt={`${service.title} illustration`}
+                  width={450}
+                  height={380}
+                  className="w-full h-auto max-w-[350px] lg:max-w-[400px]"
+                />
+              </div>
+            )}
           </div>
         </Container>
       </section>

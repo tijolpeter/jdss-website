@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Search } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
-import { mainNavigation, servicesMenuSections } from '@/data/navigation';
+import { mainNavigation } from '@/data/navigation';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,13 +38,30 @@ export function Header() {
           : 'bg-white'
       )}
     >
+      {/* Top bar */}
+      <div className="hidden lg:block bg-primary-50 border-b border-primary-100">
+        <Container size="xl">
+          <div className="flex items-center justify-end gap-6 py-2 text-xs text-primary-700">
+            <Link href="/resources" className="hover:text-primary-900 transition-colors">
+              Resources
+            </Link>
+          </div>
+        </Container>
+      </div>
+
       <Container size="xl">
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-primary-900">JDSS & Co</span>
-              <span className="text-xs text-secondary-600 -mt-1">Chartered Accountants</span>
+            <div className="flex items-center gap-2">
+              {/* Logo mark */}
+              <div className="w-8 h-8 rounded-full bg-primary-800 flex items-center justify-center">
+                <span className="text-white font-serif font-bold text-sm">J</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg font-serif font-bold text-primary-900 italic">JDSS & Co</span>
+                <span className="text-[10px] text-secondary-500 -mt-1 tracking-wide">CHARTERED ACCOUNTANTS</span>
+              </div>
             </div>
           </Link>
 
@@ -60,10 +77,10 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors',
+                    'flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors',
                     pathname === item.href || pathname.startsWith(item.href + '/')
-                      ? 'text-primary-700 bg-primary-50'
-                      : 'text-secondary-700 hover:text-primary-700 hover:bg-secondary-50'
+                      ? 'text-primary-800'
+                      : 'text-secondary-600 hover:text-primary-800'
                   )}
                 >
                   {item.title}
@@ -87,8 +104,8 @@ export function Header() {
                             className={cn(
                               'block px-4 py-2.5 rounded-lg transition-colors',
                               pathname === child.href
-                                ? 'bg-primary-50 text-primary-700'
-                                : 'text-secondary-700 hover:bg-secondary-50 hover:text-secondary-900'
+                                ? 'bg-primary-50 text-primary-800'
+                                : 'text-secondary-600 hover:bg-secondary-50 hover:text-secondary-900'
                             )}
                           >
                             <div className="font-medium">{child.title}</div>
@@ -108,22 +125,21 @@ export function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="tel:+914842704040"
-              className="flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-700 transition-colors"
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              className="p-2 text-secondary-500 hover:text-primary-800 transition-colors"
+              aria-label="Search"
             >
-              <Phone className="w-4 h-4" />
-              <span className="hidden xl:inline">+91 484 270 4040</span>
-            </Link>
+              <Search className="w-5 h-5" />
+            </button>
             <Button asChild>
-              <Link href="/contact">Schedule Consultation</Link>
+              <Link href="/contact">Schedule a Call</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 -mr-2 text-secondary-700 hover:text-primary-700"
+            className="lg:hidden p-2 -mr-2 text-secondary-700 hover:text-primary-800"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
@@ -147,7 +163,7 @@ export function Header() {
                     <div>
                       <button
                         className={cn(
-                          'flex items-center justify-between w-full px-4 py-3 text-left rounded-lg',
+                          'flex items-center justify-between w-full px-4 py-3 text-left',
                           'text-secondary-700 hover:bg-secondary-50'
                         )}
                         onClick={() =>
@@ -171,7 +187,7 @@ export function Header() {
                               className={cn(
                                 'block px-4 py-2.5 rounded-lg text-sm',
                                 pathname === child.href
-                                  ? 'bg-primary-50 text-primary-700'
+                                  ? 'bg-primary-50 text-primary-800'
                                   : 'text-secondary-600 hover:bg-secondary-50'
                               )}
                             >
@@ -185,9 +201,9 @@ export function Header() {
                     <Link
                       href={item.href}
                       className={cn(
-                        'block px-4 py-3 rounded-lg font-medium',
+                        'block px-4 py-3 font-medium',
                         pathname === item.href
-                          ? 'bg-primary-50 text-primary-700'
+                          ? 'bg-primary-50 text-primary-800'
                           : 'text-secondary-700 hover:bg-secondary-50'
                       )}
                     >
@@ -198,7 +214,7 @@ export function Header() {
               ))}
               <div className="pt-4 border-t border-border mt-4">
                 <Button className="w-full" asChild>
-                  <Link href="/contact">Schedule Consultation</Link>
+                  <Link href="/contact">Schedule a Call</Link>
                 </Button>
               </div>
             </div>

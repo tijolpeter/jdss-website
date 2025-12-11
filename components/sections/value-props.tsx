@@ -1,67 +1,66 @@
 'use client';
 
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Target, BarChart2, Handshake } from 'lucide-react';
 import { Container } from '@/components/ui/container';
-
-const valueProps = [
-  {
-    icon: Target,
-    title: 'Strategic Advisory',
-    description:
-      "Beyond compliance to growth. We don't just file your returns—we help you make smarter financial decisions.",
-  },
-  {
-    icon: BarChart2,
-    title: 'Data-Driven Insights',
-    description:
-      'Real-time visibility into your numbers. Make informed decisions with clarity, not guesswork.',
-  },
-  {
-    icon: Handshake,
-    title: 'Partner Approach',
-    description:
-      "Your success is our success. We're invested in your growth, not just your compliance.",
-  },
-];
+import { Button } from '@/components/ui/button';
 
 export function ValueProps() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-secondary-50">
       <Container size="xl">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-            Why Businesses Choose Us
-          </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            We combine technical expertise with strategic thinking to deliver real value.
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            {/* Section Label */}
+            <p className="section-label mb-4">
+              <span className="text-primary-700">A Modern,</span>{' '}
+              <span className="text-accent-orange">Strategic Approach</span>
+            </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {valueProps.map((prop, index) => (
-            <motion.div
-              key={prop.title}
-              className="text-center p-8 rounded-2xl bg-white border border-border hover:shadow-lg transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-primary-100 flex items-center justify-center">
-                <prop.icon className="w-7 h-7 text-primary-700" />
-              </div>
-              <h3 className="text-xl font-semibold text-secondary-900 mb-3">
-                {prop.title}
-              </h3>
-              <p className="text-secondary-600">{prop.description}</p>
-            </motion.div>
-          ))}
+            {/* Headline */}
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-6 leading-tight">
+              Tech-Powered, Hand-Crafted Financials
+            </h2>
+
+            {/* Description */}
+            <p className="text-lg text-secondary-600 mb-8">
+              Our unique approach combines cutting-edge financial technology with personalized, expert advisory services. Get the real-time insights you need, backed by strategic advice from our team of specialists.
+            </p>
+
+            {/* CTA */}
+            <Button variant="secondary" size="lg" asChild>
+              <Link href="/services">Browse Our Services</Link>
+            </Button>
+          </motion.div>
+
+          {/* Right Column - Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="relative isolate"
+          >
+            {/* Decorative background */}
+            <div className="absolute inset-4 bg-primary-100 rounded-3xl -rotate-3 -z-10" />
+
+            {/* Tech-Powered Illustration */}
+            <div className="flex items-center justify-center p-4">
+              <Image
+                src="/images/illustrations/tech-powered.png"
+                alt="Tech-powered financial services illustration"
+                width={600}
+                height={500}
+                className="w-full h-auto max-w-[500px] mx-auto"
+              />
+            </div>
+          </motion.div>
         </div>
       </Container>
     </section>
