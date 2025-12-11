@@ -1,4 +1,16 @@
 import { LucideIcon } from 'lucide-react';
+import { ObjectId } from 'mongodb';
+
+// Resource/Blog Types
+export type ResourceCategory = 'webinar' | 'qa' | 'tool-demo' | 'guide' | 'blog';
+
+export type PostStatus = 'draft' | 'published';
+
+export interface CategoryConfig {
+  value: ResourceCategory | 'all';
+  label: string;
+  color: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'outline';
+}
 
 // Navigation Types
 export interface NavItem {
@@ -84,16 +96,42 @@ export interface QuickLink {
 
 // Blog/Resource Types
 export interface BlogPost {
+  _id?: ObjectId;
+  id: string;
   slug: string;
   title: string;
   excerpt: string;
   content: string;
   date: string;
   author: string;
-  category: string;
+  category: ResourceCategory;
   tags: string[];
   image?: string;
   readTime?: number;
+  status: PostStatus;
+  featured?: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreatePostData {
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  category: ResourceCategory;
+  tags: string[];
+  image?: string;
+  status: PostStatus;
+  featured?: boolean;
+}
+
+export interface GetPostsOptions {
+  status?: PostStatus | 'all';
+  category?: ResourceCategory | 'all';
+  limit?: number;
+  offset?: number;
+  featured?: boolean;
 }
 
 // Calculator Types

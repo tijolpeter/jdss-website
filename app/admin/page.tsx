@@ -16,7 +16,10 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  FileText,
+  Plus,
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface Submission {
   id: string;
@@ -163,6 +166,13 @@ export default function AdminDashboard() {
               )}
             </div>
             <div className="flex items-center gap-4">
+              <Link
+                href="/admin/posts"
+                className="flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg hover:bg-primary-800 transition-colors"
+              >
+                <FileText className="w-4 h-4" />
+                Manage Posts
+              </Link>
               <button
                 onClick={fetchSubmissions}
                 className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
