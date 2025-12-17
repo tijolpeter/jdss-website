@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { Input, Textarea, Select } from '@/components/ui/input';
@@ -188,50 +188,26 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Office Address */}
-              <div className="bg-white rounded-2xl p-6 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-primary-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-secondary-900 mb-2">Office Address</h3>
-                    <p className="text-secondary-600">
-                      {companyInfo.address.line1}
-                      <br />
-                      {companyInfo.address.line2}
-                      <br />
-                      {companyInfo.address.city}, {companyInfo.address.state} - {companyInfo.address.pincode}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Working Hours */}
-              <div className="bg-white rounded-2xl p-6 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-primary-700" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-secondary-900 mb-2">Working Hours</h3>
-                    <div className="space-y-1 text-secondary-600 text-sm">
-                      <div className="flex justify-between">
-                        <span>Mon - Fri:</span>
-                        <span>{companyInfo.workingHours.weekdays}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Saturday:</span>
-                        <span>{companyInfo.workingHours.saturday}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Sunday:</span>
-                        <span>{companyInfo.workingHours.sunday}</span>
-                      </div>
+              {/* Office Addresses */}
+              {companyInfo.offices.map((office, index) => (
+                <div key={index} className="bg-white rounded-2xl p-6 border border-border">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-primary-700" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-secondary-900 mb-2">{office.name}</h3>
+                      <p className="text-secondary-600">
+                        {office.line1}
+                        <br />
+                        {office.line2}
+                        <br />
+                        {office.city}, {office.state} - {office.pincode}
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </Container>

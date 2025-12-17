@@ -41,7 +41,7 @@ export function Footer() {
                     <span className="text-primary-900 font-serif font-bold text-sm">J</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xl font-serif font-bold text-white italic">JDSS & Co</span>
+                    <span className="text-xl font-serif font-bold text-white">J D S S</span>
                     <span className="text-[10px] text-primary-400 -mt-1 tracking-wide">CHARTERED ACCOUNTANTS</span>
                   </div>
                 </div>
@@ -67,9 +67,9 @@ export function Footer() {
                 <div className="flex items-start gap-3 text-primary-400">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                   <span>
-                    {companyInfo.address.line1}, {companyInfo.address.line2}
+                    {companyInfo.offices[0].line1}, {companyInfo.offices[0].line2}
                     <br />
-                    {companyInfo.address.city}, {companyInfo.address.state} - {companyInfo.address.pincode}
+                    {companyInfo.offices[0].city}, {companyInfo.offices[0].state} - {companyInfo.offices[0].pincode}
                   </span>
                 </div>
               </div>

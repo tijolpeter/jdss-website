@@ -15,9 +15,9 @@ const teamMembers = [
     id: '1',
     name: 'S Sivakumar',
     role: 'Partner',
-    designation: 'CA, MBA, Registered Valuer (IBBI)',
-    bio: 'Chartered Accountant with MBA and registered valuer for Securities & Financial Assets. Over 7 years experience including 3+ years with Big Four in International Tax and Regulatory Services. Expertise in transaction structuring, due diligence, and corporate structuring with focus on international holding company formation.',
-    qualifications: ['Chartered Accountant', 'MBA', 'Registered Valuer (IBBI)'],
+    designation: 'FCA, MBA, Registered Valuer (IBBI)',
+    bio: 'Fellow Chartered Accountant with MBA and registered valuer for Securities & Financial Assets. Over 10+ years of experience including tenure with Big Four in International Tax and Regulatory Services. Expertise in transaction structuring, due diligence, and corporate structuring with focus on international holding company formation.',
+    qualifications: ['Fellow Chartered Accountant', 'MBA', 'Registered Valuer (IBBI)'],
     email: 'sivakumar@jdss.in',
     phone: '+91 9809040447',
     expertise: ['International Tax', 'Transaction Structuring', 'Due Diligence', 'Valuation', 'Corporate Structuring'],
@@ -26,12 +26,62 @@ const teamMembers = [
     id: '2',
     name: 'Deepak Jose',
     role: 'Partner',
-    designation: 'CA, CISA',
-    bio: 'Chartered Accountant and Certified Information Systems Auditor (CISA) from ISACA USA. 6+ years experience across financial auditing, investment banking, and international tax services including Big Four consulting. Specializes in business growth consulting, systems implementation, and M&A advisory.',
-    qualifications: ['Chartered Accountant', 'CISA (ISACA USA)'],
+    designation: 'FCA, CISA',
+    bio: 'Fellow Chartered Accountant and Certified Information Systems Auditor (CISA) from ISACA USA. 10+ years of experience across financial auditing, investment banking, and international tax services including Big Four consulting. Specializes in business growth consulting, systems implementation, and M&A advisory.',
+    qualifications: ['Fellow Chartered Accountant', 'CISA (ISACA USA)'],
     email: 'deepakjose@jdss.in',
     phone: '+91 9496825458',
     expertise: ['Business Growth Consulting', 'Systems Implementation', 'Enterprise Risk Management', 'M&A Advisory'],
+  },
+  {
+    id: '3',
+    name: 'Abhilash B',
+    role: 'Chartered Accountant',
+    designation: 'FCA, DISA',
+    bio: 'Chartered Accountant with extensive experience in the BFSI sector. Prior to entering practice, he headed the Corporate Compliance function of a Regional Rural Bank, where he was responsible for regulatory compliance, governance frameworks, and risk-related matters. He specializes in internal audit and taxation, with a strong focus on banking and financial institutions. He has also completed the ICAI Certificate Course on Concurrent Audit of Banks, equipping him with practical insight into banking operations and control systems.',
+    qualifications: ['Fellow Chartered Accountant', 'DISA'],
+    email: 'abhilash@jdss.in',
+    expertise: ['Internal Audit', 'Taxation', 'Banking & BFSI', 'Regulatory Compliance', 'Concurrent Audit'],
+  },
+  {
+    id: '4',
+    name: 'Amritaranjini M',
+    role: 'Chartered Accountant',
+    designation: 'ACA',
+    bio: 'Chartered Accountant with strong experience in Assurance, including audits of listed companies and large corporate entities. She has worked with leading audit firms in Mumbai, gaining exposure to complex statutory audits and regulatory compliance. She brings a structured and detail-oriented approach to delivering reliable and high-quality assurance services.',
+    qualifications: ['Associate Chartered Accountant'],
+    email: 'amrita@jdss.in',
+    expertise: ['Statutory Audit', 'Assurance', 'Listed Company Audits', 'Regulatory Compliance'],
+  },
+  {
+    id: '5',
+    name: 'Ajay R Pillai',
+    role: 'Chartered Accountant',
+    designation: 'ACA',
+    bio: 'Chartered Accountant with a focused practice in taxation and regulatory compliance, with particular emphasis on tax litigation. He is actively involved in assisting clients in matters before various tax authorities and appellate forums. His work includes handling assessments, appeals, and advisory on contentious tax issues, combining technical clarity with a practical approach to dispute resolution.',
+    qualifications: ['Associate Chartered Accountant'],
+    email: 'ajay@jdss.in',
+    expertise: ['Tax Litigation', 'Direct Tax', 'Assessments & Appeals', 'Regulatory Compliance'],
+  },
+  {
+    id: '6',
+    name: 'Mohammed Fahiz',
+    role: 'Chartered Accountant',
+    designation: 'ACA',
+    bio: 'Chartered Accountant with a focus on financial modelling and advisory services. He works closely with businesses to develop structured financial models, evaluate strategic options, and support informed decision-making. His experience includes assisting clients with budgeting, forecasting, project viability analysis, and financial planning.',
+    qualifications: ['Associate Chartered Accountant'],
+    email: 'fahiz@jdss.in',
+    expertise: ['Financial Modelling', 'Advisory Services', 'Budgeting & Forecasting', 'Project Viability Analysis'],
+  },
+  {
+    id: '7',
+    name: 'Ann Mary',
+    role: 'Finance Professional',
+    designation: 'MBA, ACCA',
+    bio: 'Finance professional with an MBA and ACCA qualification, specializing in business valuations and financial modelling. She works on valuation assignments, financial projections, and analytical models that support strategic, investment, and transaction-related decisions. Her approach combines strong analytical skills with a practical understanding of business drivers.',
+    qualifications: ['MBA', 'ACCA'],
+    email: 'ann@jdss.in',
+    expertise: ['Business Valuations', 'Financial Modelling', 'Financial Projections', 'Investment Analysis'],
   },
 ];
 
@@ -52,16 +102,16 @@ export default function TeamPage() {
         </Container>
       </section>
 
-      {/* Partners Section */}
+      {/* Team Section */}
       <section className="section-padding">
         <Container size="xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-4">Our Partners</h2>
+            <h2 className="text-3xl font-bold text-secondary-900 mb-4">Our Team</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Leadership with Big Four experience and entrepreneurial vision.
+              A multidisciplinary team with Big Four experience and deep domain expertise.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
@@ -105,20 +155,24 @@ export default function TeamPage() {
 
                 {/* Contact */}
                 <div className="flex flex-wrap gap-4 pt-4 border-t border-border">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="inline-flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-700 transition-colors"
-                  >
-                    <Mail className="w-4 h-4" />
-                    {member.email}
-                  </a>
-                  <a
-                    href={`tel:${member.phone.replace(/\s/g, '')}`}
-                    className="inline-flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-700 transition-colors"
-                  >
-                    <Phone className="w-4 h-4" />
-                    {member.phone}
-                  </a>
+                  {member.email && (
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="inline-flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-700 transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {member.email}
+                    </a>
+                  )}
+                  {member.phone && (
+                    <a
+                      href={`tel:${member.phone.replace(/\s/g, '')}`}
+                      className="inline-flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-700 transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      {member.phone}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

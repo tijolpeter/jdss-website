@@ -1,26 +1,40 @@
 import { CompanyInfo, Stat, QuickLink } from '@/types';
 
 export const companyInfo: CompanyInfo = {
-  name: 'JDSS & Co',
+  name: 'J D S S',
   tagline: 'Chartered Accountants',
   description: 'Strategic finance partners helping ambitious businesses navigate complexity, unlock growth, and build lasting value.',
-  address: {
-    line1: '1st Floor, JDSS Enclave',
-    line2: 'Surabhi Road, Edapally',
-    city: 'Kochi',
-    state: 'Kerala',
-    pincode: '682024',
-  },
-  phone: '+91 484 XXX XXXX',
+  offices: [
+    {
+      name: 'Kochi (Head Office)',
+      line1: '1st Floor, JDSS Enclave',
+      line2: 'Surabhi Road, Edapally',
+      city: 'Kochi',
+      state: 'Kerala',
+      pincode: '682024',
+    },
+    {
+      name: 'Trivandrum',
+      line1: 'T.C.50/257, Aiswarya',
+      line2: 'JP Lane, Nemom P.O',
+      city: 'Trivandrum',
+      state: 'Kerala',
+      pincode: '695020',
+    },
+    {
+      name: 'Chennai',
+      line1: '87, Guindy Flyover',
+      line2: 'Eureka Forbes, Guindy',
+      city: 'Chennai',
+      state: 'Tamil Nadu',
+      pincode: '600032',
+    },
+  ],
+  phone: '+91 9995523182',
   email: 'info@jdss.in',
   socialLinks: {
     linkedin: 'https://linkedin.com/company/jdss',
     twitter: 'https://twitter.com/jdss_ca',
-  },
-  workingHours: {
-    weekdays: '9:30 AM - 6:30 PM',
-    saturday: '10:00 AM - 2:00 PM',
-    sunday: 'Closed',
   },
 };
 

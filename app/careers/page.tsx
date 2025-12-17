@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { MapPin, Clock, Briefcase, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Clock, Briefcase, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 
@@ -21,27 +21,35 @@ const benefits = [
 const openPositions = [
   {
     id: '1',
-    title: 'Senior Audit Associate',
-    department: 'Audit & Assurance',
-    location: 'Kochi',
-    type: 'Full-time',
-    experience: '3-5 years',
+    title: 'Articleship',
+    department: 'All Departments',
+    location: 'Kochi / Trivandrum / Chennai',
+    type: 'Articleship',
+    description: 'Candidates with qualification as specified by ICAI',
   },
   {
     id: '2',
-    title: 'Tax Consultant',
-    department: 'Taxation',
-    location: 'Kochi',
-    type: 'Full-time',
-    experience: '2-4 years',
+    title: 'Trainee',
+    department: 'All Departments',
+    location: 'Kochi / Trivandrum / Chennai',
+    type: 'Training',
+    description: 'Candidates undergoing training as part of studies or candidates with nil experience',
   },
   {
     id: '3',
-    title: 'Articleship',
+    title: 'Analyst',
+    department: 'Advisory & Consulting',
+    location: 'Kochi / Trivandrum / Chennai',
+    type: 'Full-time',
+    description: 'UG or PG holders in relevant discipline with experience',
+  },
+  {
+    id: '4',
+    title: 'Consultant',
     department: 'All Departments',
-    location: 'Kochi',
-    type: 'Articleship',
-    experience: 'Fresher',
+    location: 'Kochi / Trivandrum / Chennai',
+    type: 'Full-time',
+    description: 'CA with or without experience',
   },
 ];
 
@@ -58,9 +66,18 @@ export default function CareersPage() {
             <p className="text-xl text-secondary-600 mb-8">
               Build your career with a firm that values growth, learning, and work-life balance.
             </p>
-            <Button size="lg" asChild>
-              <a href="#openings">View Open Positions</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Button size="lg" asChild>
+                <a href="#openings">View Open Positions</a>
+              </Button>
+              <a
+                href="mailto:hr@jdss.in"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-lg border border-primary-200 text-primary-700 font-medium hover:bg-primary-50 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                Send Resume to hr@jdss.in
+              </a>
+            </div>
           </div>
         </Container>
       </section>
@@ -149,7 +166,7 @@ export default function CareersPage() {
                       </span>
                     </div>
                     <div className="mt-2 text-sm text-secondary-500">
-                      Experience: {position.experience}
+                      {position.description}
                     </div>
                   </div>
                   <Button variant="outline" asChild>
@@ -168,10 +185,10 @@ export default function CareersPage() {
               Don't see a suitable position? Send us your resume anyway.
             </p>
             <Button variant="ghost" asChild>
-              <Link href="/contact">
-                Send Speculative Application
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              <a href="mailto:hr@jdss.in">
+                <Mail className="w-4 h-4 mr-2" />
+                Send Resume to hr@jdss.in
+              </a>
             </Button>
           </div>
         </Container>

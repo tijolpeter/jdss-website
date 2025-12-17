@@ -1,30 +1,48 @@
 import { Metadata } from 'next';
-import { Calculator, Percent, DollarSign, TrendingUp, Building2, FileText } from 'lucide-react';
+import Link from 'next/link';
+import { Calculator, Percent, DollarSign, TrendingUp, Building2, FileText, Home, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 
 export const metadata: Metadata = {
   title: 'Financial Calculators',
-  description: 'Free financial calculators for GST, TDS, EMI, tax estimation, and more.',
+  description: 'Free financial calculators for GST, TDS, EMI, HRA, tax estimation, and more.',
 };
 
 const calculators = [
   {
+    title: 'EMI Calculator',
+    description: 'Calculate loan EMI, total interest, and payment breakdown for any loan amount.',
+    icon: DollarSign,
+    href: '/resources/calculators/emi',
+    status: 'active',
+  },
+  {
     title: 'GST Calculator',
-    description: 'Calculate GST amounts, reverse calculate, and determine CGST/SGST/IGST splits.',
+    description: 'Calculate GST amounts with CGST/SGST/IGST split for multiple transactions.',
     icon: Percent,
-    status: 'coming-soon',
+    href: '/resources/calculators/gst',
+    status: 'active',
   },
   {
     title: 'TDS Calculator',
-    description: 'Calculate TDS for various payment types including salary, rent, and professional fees.',
+    description: 'Calculate TDS for various payment types with FY 2025-26 rates.',
     icon: FileText,
-    status: 'coming-soon',
+    href: '/resources/calculators/tds',
+    status: 'active',
   },
   {
-    title: 'EMI Calculator',
-    description: 'Calculate loan EMI, total interest, and payment schedule for any loan amount.',
-    icon: DollarSign,
-    status: 'coming-soon',
+    title: 'GST Rate Calculator',
+    description: 'Determine applicable GST rate during rate transitions based on transaction dates.',
+    icon: TrendingUp,
+    href: '/resources/calculators/gst-rate',
+    status: 'active',
+  },
+  {
+    title: 'HRA Calculator',
+    description: 'Calculate House Rent Allowance exemption for income tax purposes.',
+    icon: Home,
+    href: '/resources/calculators/hra',
+    status: 'active',
   },
   {
     title: 'Income Tax Calculator',
@@ -35,12 +53,6 @@ const calculators = [
   {
     title: 'Business Valuation',
     description: 'Get a preliminary estimate of your business value using common valuation methods.',
-    icon: TrendingUp,
-    status: 'coming-soon',
-  },
-  {
-    title: 'Depreciation Calculator',
-    description: 'Calculate depreciation using various methods - SLM, WDV, and more.',
     icon: Building2,
     status: 'coming-soon',
   },
@@ -67,27 +79,53 @@ export default function CalculatorsPage() {
       <section className="section-padding">
         <Container size="xl">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {calculators.map((calc) => (
-              <div
-                key={calc.title}
-                className="bg-white rounded-xl p-6 border border-border relative overflow-hidden"
-              >
-                {calc.status === 'coming-soon' && (
-                  <div className="absolute top-4 right-4">
-                    <span className="text-xs px-2 py-1 rounded-full bg-secondary-100 text-secondary-600">
-                      Coming Soon
-                    </span>
+            {calculators.map((calc) => {
+              const content = (
+                <>
+                  {calc.status === 'coming-soon' && (
+                    <div className="absolute top-4 right-4">
+                      <span className="text-xs px-2 py-1 rounded-full bg-secondary-100 text-secondary-600">
+                        Coming Soon
+                      </span>
+                    </div>
+                  )}
+                  <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+                    <calc.icon className="w-6 h-6 text-primary-700" />
                   </div>
-                )}
-                <div className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
-                  <calc.icon className="w-6 h-6 text-primary-700" />
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2 group-hover:text-primary-700 transition-colors">
+                    {calc.title}
+                  </h3>
+                  <p className="text-secondary-600 text-sm mb-4">{calc.description}</p>
+                  {calc.status === 'active' && (
+                    <span className="inline-flex items-center text-sm font-medium text-primary-700">
+                      Open Calculator
+                      <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  )}
+                </>
+              );
+
+              if (calc.status === 'active' && calc.href) {
+                return (
+                  <Link
+                    key={calc.title}
+                    href={calc.href}
+                    className="group bg-white rounded-xl p-6 border border-border relative overflow-hidden hover:shadow-lg hover:border-primary-200 transition-all"
+                  >
+                    {content}
+                  </Link>
+                );
+              }
+
+              return (
+                <div
+                  key={calc.title}
+                  className="group bg-white rounded-xl p-6 border border-border relative overflow-hidden opacity-75"
+                >
+                  {content}
                 </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
-                  {calc.title}
-                </h3>
-                <p className="text-secondary-600 text-sm">{calc.description}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-12">

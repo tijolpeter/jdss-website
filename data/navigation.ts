@@ -87,11 +87,6 @@ export const mainNavigation: NavItem[] = [
         description: 'Insights and updates',
       },
       {
-        title: 'Calculators',
-        href: '/resources/calculators',
-        description: 'Financial tools',
-      },
-      {
         title: 'Important Links',
         href: '/resources/links',
         description: 'Government portals and resources',
@@ -129,7 +124,6 @@ export const footerNavigation: NavSection[] = [
     title: 'Resources',
     items: [
       { title: 'Blog', href: '/resources/blog' },
-      { title: 'Calculators', href: '/resources/calculators' },
       { title: 'Important Links', href: '/resources/links' },
     ],
   },

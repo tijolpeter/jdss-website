@@ -48,7 +48,7 @@ export function Header() {
                 <span className="text-white font-serif font-bold text-sm">J</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-serif font-bold text-primary-900 italic">JDSS & Co</span>
+                <span className="text-lg font-serif font-bold text-primary-900">J D S S</span>
                 <span className="text-[10px] text-secondary-500 -mt-1 tracking-wide">CHARTERED ACCOUNTANTS</span>
               </div>
             </div>

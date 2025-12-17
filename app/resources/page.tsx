@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { FileText, Calculator, ExternalLink, ArrowRight } from 'lucide-react';
+import { FileText, Calculator, ExternalLink, ArrowRight, BookOpen } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 
 export const metadata: Metadata = {
@@ -18,10 +18,17 @@ const resources = [
   },
   {
     title: 'Financial Calculators',
-    description: 'Tools to help you calculate GST, TDS, EMI, and other financial metrics.',
+    description: 'Tools to help you calculate GST, TDS, EMI, HRA, and other financial metrics.',
     icon: Calculator,
     href: '/resources/calculators',
     color: 'bg-green-100 text-green-700',
+  },
+  {
+    title: 'Knowledge Bank',
+    description: 'Downloadable reference documents including tax rules, acts, bulletins, and forms.',
+    icon: BookOpen,
+    href: '/resources/knowledge-bank',
+    color: 'bg-amber-100 text-amber-700',
   },
   {
     title: 'Blog & Insights',
@@ -52,7 +59,7 @@ export default function ResourcesPage() {
       {/* Resources Grid */}
       <section className="section-padding">
         <Container size="lg">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {resources.map((resource) => (
               <Link
                 key={resource.title}

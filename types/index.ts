@@ -160,18 +160,22 @@ export interface PageMeta {
   ogImage?: string;
 }
 
+// Office Address Types
+export interface OfficeAddress {
+  name: string;
+  line1: string;
+  line2: string;
+  city: string;
+  state: string;
+  pincode: string;
+}
+
 // Company Info Types
 export interface CompanyInfo {
   name: string;
   tagline: string;
   description: string;
-  address: {
-    line1: string;
-    line2: string;
-    city: string;
-    state: string;
-    pincode: string;
-  };
+  offices: OfficeAddress[];
   phone: string;
   email: string;
   socialLinks: {
@@ -179,10 +183,5 @@ export interface CompanyInfo {
     twitter?: string;
     facebook?: string;
     instagram?: string;
-  };
-  workingHours: {
-    weekdays: string;
-    saturday: string;
-    sunday: string;
   };
 }

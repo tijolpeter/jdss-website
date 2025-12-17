@@ -12,26 +12,26 @@ export const metadata: Metadata = {
   description: 'Learn about JDSS & Co, a chartered accountancy firm built for the ambitions of modern Indian businesses. 15+ years in practice serving startups, SMEs, and corporates.',
 };
 
-const philosophy = [
+const coreValues = [
+  {
+    icon: CheckCircle2,
+    title: 'Responsibility',
+    description: 'We take ownership — of our work, our decisions, and the impact we create. We follow through with intention, consistency, and care.',
+  },
   {
     icon: Users,
-    title: 'Partners, Not Providers',
-    description: 'We succeed when you succeed. Every engagement is a partnership built on shared goals.',
+    title: 'Trust',
+    description: 'Trust is earned through authenticity, integrity, and reliability. We trust one another to think independently, act ethically, and contribute with honesty.',
   },
   {
     icon: Target,
-    title: 'Proactive, Not Reactive',
-    description: "We don't wait for problems. We anticipate challenges and create opportunities.",
-  },
-  {
-    icon: Award,
-    title: 'Strategic, Not Just Technical',
-    description: 'Compliance is the baseline. We add strategic value that impacts your bottom line.',
+    title: 'Purpose',
+    description: 'We believe work matters when it has meaning. Purpose gives direction to our effort, energy to our actions, and clarity to our decisions.',
   },
   {
     icon: Lightbulb,
-    title: 'Technology-Enabled',
-    description: 'Modern tools and systems that give you real-time visibility and efficiency.',
+    title: 'Wisdom',
+    description: 'Wisdom is the balance of experience, judgement, empathy, and timing. It enables us to make decisions that are not just technically correct but practically meaningful.',
   },
 ];
 
@@ -121,12 +121,20 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
               Our Philosophy
             </h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              The principles that guide everything we do.
+            <p className="text-xl font-serif italic text-primary-700 mb-4">
+              "Different by intention. Better by commitment."
+            </p>
+            <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+              At JDSS, we believe that the work we do is more than a profession — it is a mindset. We exist to make things better — for our clients, our teams, and the ecosystem we serve.
+            </p>
+          </div>
+          <div className="text-center mb-8">
+            <p className="text-md font-medium text-secondary-700">
+              "Responsibility in action, Trust in relationships, Purpose in direction, Wisdom in decisions."
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {philosophy.map((item) => (
+            {coreValues.map((item) => (
               <div
                 key={item.title}
                 className="bg-white rounded-xl p-6 border border-border hover:shadow-lg transition-shadow"
