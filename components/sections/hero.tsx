@@ -21,8 +21,9 @@ export function Hero() {
               {/* Main Headline */}
               <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-secondary-900 mb-6 leading-[1.1]">
                 Empowering Businesses With Financial{' '}
-                <span className="text-highlight">Clarity</span> &{' '}
-                <span className="text-highlight">Growth</span>
+                <span className="text-highlight">Clarity</span> &
+                <br />
+                <span className="text-highlight" style={{ marginLeft: '-0.15em' }}>Growth</span>
               </h1>
 
               {/* Subheadline */}

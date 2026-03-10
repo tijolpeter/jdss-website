@@ -81,11 +81,11 @@ export const mainNavigation: NavItem[] = [
     title: 'Resources',
     href: '/resources',
     children: [
-      {
-        title: 'Blog',
-        href: '/resources/blog',
-        description: 'Insights and updates',
-      },
+      // {
+      //   title: 'Blog',
+      //   href: '/resources/blog',
+      //   description: 'Insights and updates',
+      // },
       {
         title: 'Important Links',
         href: '/resources/links',
@@ -123,7 +123,7 @@ export const footerNavigation: NavSection[] = [
   {
     title: 'Resources',
     items: [
-      { title: 'Blog', href: '/resources/blog' },
+      // { title: 'Blog', href: '/resources/blog' },
       { title: 'Important Links', href: '/resources/links' },
     ],
   },

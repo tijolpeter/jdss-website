@@ -15,11 +15,11 @@ export const companyInfo: CompanyInfo = {
     },
     {
       name: 'Trivandrum',
-      line1: 'T.C.50/257, Aiswarya',
-      line2: 'JP Lane, Nemom P.O',
-      city: 'Trivandrum',
+      line1: 'T.C. 40/473, Kairali Gardens',
+      line2: 'Thirumala P.O',
+      city: 'Thiruvananthapuram',
       state: 'Kerala',
-      pincode: '695020',
+      pincode: '695006',
     },
     {
       name: 'Chennai',

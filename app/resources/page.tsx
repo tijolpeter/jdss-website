@@ -30,13 +30,13 @@ const resources = [
     href: '/resources/knowledge-bank',
     color: 'bg-amber-100 text-amber-700',
   },
-  {
-    title: 'Blog & Insights',
-    description: 'Stay updated with the latest tax updates, compliance news, and financial insights.',
-    icon: FileText,
-    href: '/resources/blog',
-    color: 'bg-purple-100 text-purple-700',
-  },
+  // {
+  //   title: 'Blog & Insights',
+  //   description: 'Stay updated with the latest tax updates, compliance news, and financial insights.',
+  //   icon: FileText,
+  //   href: '/resources/blog',
+  //   color: 'bg-purple-100 text-purple-700',
+  // },
 ];
 
 export default function ResourcesPage() {
