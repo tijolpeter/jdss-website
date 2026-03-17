@@ -10,8 +10,8 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50/50">
       <Container size="xl" className="relative">
-        <div className="py-16 md:py-20 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="py-10 md:py-14 lg:py-16 lg:min-h-[calc(100svh-80px)] flex items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center w-full">
             {/* Left Column - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -19,7 +19,7 @@ export function Hero() {
               transition={{ duration: 0.6 }}
             >
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-secondary-900 mb-6 leading-[1.1]">
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-secondary-900 mb-4 lg:mb-6 leading-[1.1]">
                 Empowering Businesses With Financial{' '}
                 <span className="text-highlight">Clarity</span> &
                 <br />
@@ -27,7 +27,7 @@ export function Hero() {
               </h1>
 
               {/* Subheadline */}
-              <p className="text-lg md:text-xl text-secondary-600 mb-8 max-w-xl">
+              <p className="text-base md:text-lg lg:text-xl text-secondary-600 mb-6 lg:mb-8 max-w-xl">
                 Our accounting, finance, and advisory services give you peace of mind—so you can focus on what matters most: growing your business.
               </p>
 
@@ -60,7 +60,7 @@ export function Hero() {
                     alt="Financial clarity and growth illustration"
                     width={600}
                     height={500}
-                    className="w-full h-auto max-w-[500px] mx-auto"
+                    className="w-full h-auto max-w-[500px] lg:max-h-[calc(100svh-200px)] object-contain mx-auto"
                     priority
                   />
                 </div>
